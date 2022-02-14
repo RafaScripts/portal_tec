@@ -9,7 +9,7 @@ export default function Routes(){
     return(
         <Router>
             <Switch>
-                <Route path={'/'} component={login} />
+                <Route path={'/login'} component={login} />
             </Switch>
         </Router>
     );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {FiLogIn} from 'react-icons/fi';
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 //import './styles.css';
 import api from '../../service/api';
 
@@ -17,8 +17,10 @@ const Index = () =>{
         try{
             const response = await api.post('logon', { email, password });
 
+            localStorage.setItem('id', response.data.id);
+            localStorage.setItem('username', response.data.username);
             localStorage.setItem('id_cloud', response.data.id_cloud);
-            localStorage.setItem('id_service', response.data.id_service)
+            localStorage.setItem('id_service', response.data.id_service);
 
             history.push('/home');
         }catch (err) {
