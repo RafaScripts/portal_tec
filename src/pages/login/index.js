@@ -21,6 +21,7 @@ const Index = () =>{
             localStorage.setItem('username', response.data.username);
             localStorage.setItem('id_cloud', response.data.id_cloud);
             localStorage.setItem('id_service', response.data.id_service);
+            localStorage.setItem('token', response.data.token);
 
             history.push('/home');
         }catch (err) {
